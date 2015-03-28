@@ -1,52 +1,21 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Simple Map</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <style>
-      html, body, #map-canvas {
-        height: 100%;
-        margin: 0px;
-        padding: 0px
-      }
-    </style>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-    <script type="text/javascript" src="directions.js"></script>
-  </head>
-  <body onload="initialize();">
-  <div>
-<strong>Start: </strong>
-<select id="start" onchange="calcRoute();">
-  <option value="chicago, il">Chicago</option>
-  <option value="st louis, mo">St Louis</option>
-  <option value="joplin, mo">Joplin, MO</option>
-  <option value="oklahoma city, ok">Oklahoma City</option>
-  <option value="amarillo, tx">Amarillo</option>
-  <option value="gallup, nm">Gallup, NM</option>
-  <option value="flagstaff, az">Flagstaff, AZ</option>
-  <option value="winona, az">Winona</option>
-  <option value="kingman, az">Kingman</option>
-  <option value="barstow, ca">Barstow</option>
-  <option value="san bernardino, ca">San Bernardino</option>
-  <option value="los angeles, ca">Los Angeles</option>
-</select>
-<strong>End: </strong>
-<select id="end" onchange="calcRoute();">
-  <option value="chicago, il">Chicago</option>
-  <option value="st louis, mo">St Louis</option>
-  <option value="joplin, mo">Joplin, MO</option>
-  <option value="oklahoma city, ok">Oklahoma City</option>
-  <option value="amarillo, tx">Amarillo</option>
-  <option value="gallup, nm">Gallup, NM</option>
-  <option value="flagstaff, az">Flagstaff, AZ</option>
-  <option value="winona, az">Winona</option>
-  <option value="kingman, az">Kingman</option>
-  <option value="barstow, ca">Barstow</option>
-  <option value="san bernardino, ca">San Bernardino</option>
-  <option value="los angeles, ca">Los Angeles</option>
-</select>
-</div>
-  <div id="map-canvas"></div>
-  </body>
-</html>
+ <html lang="en" style="height:100%; width:100%;">
+   	<head>
+    		<title>Geolocation and Google Maps Example</title>
+     		<meta charset="UTF-8" />
+     		<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+     		<script src="helloWorld.js"></script>
+   	</head>
+  	<body style="height:100%; width:100%; margin:0; padding:0;">
+  		<div>
+			<strong>How do you wanna go to travel? </strong>
+				   	<select id="travelling" onchange="changeMode();">
+ 					  <option value="DRIVING">By car</option>
+					  <option value="WALKING">Walking</option>
+					  <option value="TRANSIT">By public transport</option>
+					</select>
+		</div>
+     		<div id="map_canvas" style="float:left; width:75%; height:100%;"></div>
+    		<div id="dir_panel" style="float:right; width:25%; height:100%;"></div>
+	</body>
+</html> 
