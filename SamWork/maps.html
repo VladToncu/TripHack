@@ -1,2 +1,21 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html><head><meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title></title></head><body><big style="font-weight: bold;"><big><a href="file:///D:/DropBox/Dropbox/TripHack/App/text.html">Text View</a> | <a href="file:///D:/DropBox/Dropbox/TripHack/App/maps.html">Map View</a></big></big></body></html>
+<!DOCTYPE html>
+ <html lang="en" style="height:100%; width:100%;">
+   	<head>
+    		<title>Geolocation and Google Maps Example</title>
+     		<meta charset="UTF-8" />
+     		<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+     		<script src="helloWorld.js"></script>
+   	</head>
+  	<body style="height:100%; width:100%; margin:0; padding:0;">
+  		<div>
+			<strong>How do you wanna go to travel? </strong>
+				   	<select id="travelling" onchange="changeMode();">
+ 					  <option value="DRIVING">By car</option>
+					  <option value="WALKING">Walking</option>
+					  <option value="TRANSIT">By public transport</option>
+					</select>
+		</div>
+     		<div id="map_canvas" style="float:left; width:75%; height:100%;"></div>
+    		<div id="dir_panel" style="float:right; width:25%; height:100%;"></div>
+	</body>
+</html> 
