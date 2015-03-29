@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+ <html lang="en" style="height:100%; width:100%;">
+   	<head>
+    		<title>Geolocation and Google Maps Example</title>
+     		<meta charset="UTF-8" />
+
+     		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
+     		<script src="helloWorld.js"></script>
+   	</head>
+  	<body style="height:100%; width:100%; margin:0; padding:0;" onload="loadMap();">
+  		<div>
+			<strong>How do you wanna go to travel? </strong>
+				   	<select id="travelling" onchange="changeMode();">
+ 					  <option value="DRIVING">By car</option>
+					  <option value="WALKING">Walking</option>
+					  <option value="TRANSIT">By public transport</option>
+					</select>
+			<strong>I want to go back</strong>
+				   	<select id="back" onchange="changeBackDestination();">
+ 					  <option value="WORK">To work</option>
+					  <option value="HOTEL">To hotel</option>
+					</select>
+		</div>
+     		<div id="map_canvas" style="float:left; width:75%; height:100%;"></div>
+    		<div id="dir_panel" style="float:right; width:25%; height:100%;"></div>
+    		
+	</body>
+</html> 
