@@ -6,8 +6,9 @@ if (navigator.geolocation)
 else
 		alert('Your browser does not support geolocation!');
 hotel=localStorage.getItem("hotel").toLowerCase();
-var work=localStorage.getItem("work");
+work=localStorage.getItem("work").toLowerCase();
 }
+var work;
 var hotel;
 var map;
 var infowindow;
@@ -36,14 +37,20 @@ dirDisp.setDirections(result);});
 });
 infowindow = new google.maps.InfoWindow();
 
-var request = {
+var request1 = {
+    location: pyrmont,
+    radius: 2000,
+    types: ['establishment']
+  };
+var request2 = {
     location: pyrmont,
     radius: 2000,
     types: ['lodging']
   };
   
 var service = new google.maps.places.PlacesService(map);
-service.nearbySearch(request, callback);
+service.nearbySearch(request1, callback);
+service.nearbySearch(request2, callback);
 } 
 var walkingMode="DRIVING";
 function changeMode()
@@ -64,7 +71,7 @@ function callback(results, status) {
     foundHotel=false;
     var name=results[i].name.split(" ");
     for(var j=0;j<name.length;j++)
-    	if(name[j].toLowerCase()==hotel)
+    	if(name[j].toLowerCase()==hotel || name[j].toLowerCase()==work)
     		foundHotel=true;
     if(foundHotel==true)
       createMarker(results[i]);
