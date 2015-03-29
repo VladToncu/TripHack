@@ -7,6 +7,7 @@ else
 		alert('Your browser does not support geolocation!');
 hotel=localStorage.getItem("hotel").toLowerCase();
 work=localStorage.getItem("work").toLowerCase();
+
 }
 var work;
 var hotel;
@@ -21,14 +22,12 @@ var pyrmont;
 var clickedWorkPlace=false;
 
 function showMap(position) {
-
 var latitude  = position.coords.latitude;
 var longitude = position.coords.longitude;
 latlng    = new google.maps.LatLng(latitude, longitude);
 var mapOpts   = {zoom: 15, center: latlng, mapTypeId: google.maps.MapTypeId.HYBRID};
 var canvas    = document.getElementById('map_canvas');
 map = new google.maps.Map(canvas, mapOpts);
-
 pyrmont=new google.maps.LatLng(latitude,longitude);
 
 var marker    = new google.maps.Marker({position: latlng, map: map});
@@ -62,7 +61,7 @@ if(localStorage.getItem("food")=="food")
 if (localStorage.getItem("bar")=="bar")
 	searchBar();
 if(localStorage.getItem("coffee")=="coffee")
-	searchCoffee();
+	searchCoffee();;
 } 
 var walkingMode="DRIVING";
 function changeMode()
@@ -131,7 +130,7 @@ function callback_auxiliar(results, status)
 	if (status == google.maps.places.PlacesServiceStatus.OK) {
     	for (var i = 0; i < results.length; i++) 
     	{
-    		if(results[i].rating>3.5 && results[i].open_now)
+    		if(results[i].rating>3.5)
     			createMarker(results[i]);
     	}
     	}
